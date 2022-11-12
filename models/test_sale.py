@@ -9,6 +9,9 @@ class TestSale(models.Model):
 
     test = fields.Char(string="Test", default=str(randint(100, 10000)))
     
+    @api.onchange("state")
+    def _onchange_state(self):
+        print("STATE: " + self.state)
 
     @api.onchange("tax_totals_json")
     def _onchange_line(self):
