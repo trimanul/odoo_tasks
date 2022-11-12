@@ -1,4 +1,7 @@
 {
     'name':'Odoo_trimanul',
-    'depends': ['base']
+    'depends': ['base', 'sale'],
+    'data': [
+        'views/test_sale.xml'
+    ]
 }
