@@ -17,6 +17,7 @@ class TestSale(models.Model):
     
     @api.constrains("test")
     def check_test(self):
-        if (len(self.test) > 50):
-            raise ValidationError("Длина текста должна быть меньше 50 символов!")
-    
+
+        if (self.test):    
+            if (len(self.test) > 50):
+                raise ValidationError("Длина текста должна быть меньше 50 символов!")
